@@ -41,7 +41,7 @@ const App = () => {
     const onClickReset = () => {
         setMembers([]);
         setShuffledMembers([]);
-        setIsShuffled(true);
+        setIsShuffled(false);
     }
 
     return (
