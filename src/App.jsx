@@ -1,5 +1,10 @@
 import "./App.css";
 import { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEdit } from "@fortawesome/free-solid-svg-icons";
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
+import { faRetweet } from '@fortawesome/free-solid-svg-icons';
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
 const App = () => {
     const [memberName, setMemberName] = useState('');
@@ -43,13 +48,16 @@ const App = () => {
         <>
             <div className="input-area">
                 <input placeholder="なまえ" value={memberName} onChange={onChangeMenberName}></input>
-                <button id="add-button" onClick={onClickAdd}>エントリー</button>
-                <button id="add-button" onClick={onClickReset}>リセット</button>
+                <button id="add-button" onClick={onClickAdd}><FontAwesomeIcon icon={faEdit} />エントリー</button>
+                <button id="add-button" onClick={onClickReset}><FontAwesomeIcon icon={faTrash} />リセット</button>
             </div>
             <div className="member-area">
                 <div className='list-row'>
                     <p className='title'>参加一覧</p>
-                    <button onClick={onClickshuffle}>{isShuffled ? "シャッフル" :"もう一回"}</button>
+                    <button onClick={onClickshuffle}>
+                        <FontAwesomeIcon icon={faRetweet} />
+                        {isShuffled ? "シャッフル" :"もう一回"}
+                    </button>
                 </div>
                 <ul>
                     {members.map((member, index) => {
@@ -57,7 +65,9 @@ const App = () => {
                             <li key={member}>
                                 <div className='list-row'>
                                     <p>{member}</p>
-                                    <button onClick={()=> onClickDelete(index)}>やっぱやめ</button>
+                                    <button onClick={()=> onClickDelete(index)}>
+                                        <FontAwesomeIcon icon={faTimes} />やっぱやめ
+                                    </button>
                                 </div>
                             </li>
                         );
