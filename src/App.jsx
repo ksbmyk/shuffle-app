@@ -2,12 +2,18 @@ import "./App.css";
 import { useState } from "react";
 
 const App = () => {
+    const [menberName, setMenberName] = useState('');
     const [menbers, setMenbers] = useState(['Aチーム', 'Bチーム']);
     const [shuffleMenbers, setShuffleMenbers] = useState(['Bチーム', 'Aチーム']);
+
+    const onChangeMenberName = (event) => {
+        setMenberName(event.target.value);
+    }
+
     return (
         <>
             <div className="input-area">
-                <input placeholder="なまえ"></input>
+                <input placeholder="なまえ" value={menberName} onChange={onChangeMenberName}></input>
                 <button id="add-button">エントリー</button>
             </div>
             <div className="member-area">
