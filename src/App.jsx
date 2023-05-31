@@ -3,7 +3,7 @@ import { useState } from "react";
 
 const App = () => {
     const [memberName, setMemberName] = useState('');
-    const [members, setMembers] = useState(['Aチーム', 'Bチーム']);
+    const [members, setMembers] = useState([]);
     const [shuffleMembers, setShuffleMembers] = useState(['Bチーム', 'Aチーム']);
 
     const onChangeMenberName = (event) => {
