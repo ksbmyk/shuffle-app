@@ -2,18 +2,18 @@ import "./App.css";
 import { useState } from "react";
 
 const App = () => {
-    const [menberName, setMenberName] = useState('');
-    const [menbers, setMenbers] = useState(['Aチーム', 'Bチーム']);
-    const [shuffleMenbers, setShuffleMenbers] = useState(['Bチーム', 'Aチーム']);
+    const [memberName, setMemberName] = useState('');
+    const [members, setMembers] = useState(['Aチーム', 'Bチーム']);
+    const [shuffleMembers, setShuffleMembers] = useState(['Bチーム', 'Aチーム']);
 
     const onChangeMenberName = (event) => {
-        setMenberName(event.target.value);
-    }
+        setMemberName(event.target.value);
+    };
 
     return (
         <>
             <div className="input-area">
-                <input placeholder="なまえ" value={menberName} onChange={onChangeMenberName}></input>
+                <input placeholder="なまえ" value={memberName} onChange={onChangeMenberName}></input>
                 <button id="add-button">エントリー</button>
             </div>
             <div className="member-area">
@@ -22,11 +22,11 @@ const App = () => {
                     <button>リセット</button>
                 </div>
                 <ul>
-                    {menbers.map((menber) => {
+                    {members.map((member) => {
                         return (
-                            <li key={menber}>
+                            <li key={member}>
                                 <div className='list-row'>
-                                    <p>{menber}</p>
+                                    <p>{member}</p>
                                     <button>やっぱやめ</button>
                                 </div>
                             </li>
@@ -37,10 +37,10 @@ const App = () => {
             <div className='member-area'>
                 <p className='title'>順番</p>
                 <ul>
-                    {shuffleMenbers.map((menber, index) => {
+                    {shuffleMembers.map((member, index) => {
                         return (
-                        <li key={shuffleMenbers}>
-                            <p>{index + 1}. {menber}</p>
+                        <li key={shuffleMembers}>
+                            <p>{index + 1}. {member}</p>
                         </li>
                         );
                     })}
