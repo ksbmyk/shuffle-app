@@ -1,5 +1,6 @@
 body {
   font-family: sans-serif;
+  color: #444444;
 }
 
 input {
@@ -14,10 +15,11 @@ button {
   border: none;
   padding: 4px 10px;
   margin-left: 8px;
+  color: #444444;
 }
 
 button:hover {
-  background-color: #ff7fff;
+  background-color: #fdd000;
   color: #fff;
   cursor: pointer;
 }
@@ -27,7 +29,7 @@ li {
 }
 
 .input-area {
-  background-color: #c1ffff;
+  background-color: #0068b7;
   width: 500px;
   min-height: 30px;
   padding: 8px;
@@ -36,7 +38,16 @@ li {
 }
 
 .member-area {
-  background-color: #ffffe0;
+  background-color: #9fd9f6;
+  width: 500px;
+  min-height: 300px;
+  padding: 8px;
+  margin: 8px;
+  border-radius: 8px;
+}
+
+.shuffled-area {
+  background-color: #fdd000;
   width: 500px;
   min-height: 200px;
   padding: 8px;
@@ -47,11 +58,9 @@ li {
 .title {
   margin: 0;
   font-weight: bold;
-  color: #666666;
 }
 
 .list-row {
   display: flex;
   align-items: center;
-  padding-bottom: 4px;
 }

@@ -56,7 +56,7 @@ const App = () => {
                     <p className='title'>参加一覧</p>
                     <button onClick={onClickshuffle}>
                         <FontAwesomeIcon icon={faRetweet} />
-                        {isShuffled ? "シャッフル" :"もう一回"}
+                        {isShuffled ? "もう一回" : "シャッフル"}
                     </button>
                 </div>
                 <ul>
@@ -66,7 +66,7 @@ const App = () => {
                                 <div className='list-row'>
                                     <p>{member}</p>
                                     <button onClick={()=> onClickDelete(index)}>
-                                        <FontAwesomeIcon icon={faTimes} />やっぱやめ
+                                        <FontAwesomeIcon icon={faTimes} />
                                     </button>
                                 </div>
                             </li>
@@ -74,13 +74,13 @@ const App = () => {
                     })}
                 </ul>
             </div>
-            <div className='member-area'>
+            <div className='shuffled-area'>
                 <p className='title'>順番</p>
                 <ul>
                     {shuffledMembers.map((member, index) => {
                         return (
                             <li key={member}>
-                                <p>{index+1}. {member}</p>
+                                <p style={{fontWeight: 'bold'}}>{index+1}. {member}</p>
                             </li>
                         );
                     })}
