@@ -4,7 +4,7 @@ import { useState } from "react";
 const App = () => {
     const [memberName, setMemberName] = useState('');
     const [members, setMembers] = useState([]);
-    const [shuffleMembers, setShuffleMembers] = useState(['Bチーム', 'Aチーム']);
+    const [shuffledMembers, setShuffledMembers] = useState([]);
 
     const onChangeMenberName = (event) => {
         setMemberName(event.target.value);
@@ -22,6 +22,12 @@ const App = () => {
         setMembers(newMembers);
     };
 
+    const onClickshuffle = () => {
+        setShuffledMembers([]);
+        const resultMembers = [...members].sort(() => Math.random() - 0.5);
+        setShuffledMembers(resultMembers);
+    };
+
     return (
         <>
             <div className="input-area">
@@ -31,7 +37,7 @@ const App = () => {
             <div className="member-area">
                 <div className='list-row'>
                     <p className='title'>参加一覧</p>
-                    <button>シャッフル</button>
+                    <button onClick={onClickshuffle}>シャッフル</button>
                 </div>
                 <ul>
                     {members.map((member, index) => {
@@ -49,11 +55,11 @@ const App = () => {
             <div className='member-area'>
                 <p className='title'>順番</p>
                 <ul>
-                    {shuffleMembers.map((member, index) => {
+                    {shuffledMembers.map((member, index) => {
                         return (
-                        <li key={shuffleMembers}>
-                            <p>{index + 1}. {member}</p>
-                        </li>
+                            <li key={member}>
+                                <p>{index+1}. {member}</p>
+                            </li>
                         );
                     })}
                 </ul>
