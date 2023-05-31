@@ -16,6 +16,12 @@ const App = () => {
         setMemberName('');
     };
 
+    const onClickDelete = (index) => {
+        const newMembers = [...members];
+        newMembers.splice(index, 1);
+        setMembers(newMembers);
+    };
+
     return (
         <>
             <div className="input-area">
@@ -28,12 +34,12 @@ const App = () => {
                     <button>シャッフル</button>
                 </div>
                 <ul>
-                    {members.map((member) => {
+                    {members.map((member, index) => {
                         return (
                             <li key={member}>
                                 <div className='list-row'>
                                     <p>{member}</p>
-                                    <button>やっぱやめ</button>
+                                    <button onClick={()=> onClickDelete(index)}>やっぱやめ</button>
                                 </div>
                             </li>
                         );
