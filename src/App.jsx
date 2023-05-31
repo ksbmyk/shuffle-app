@@ -9,12 +9,18 @@ const App = () => {
     const onChangeMenberName = (event) => {
         setMemberName(event.target.value);
     };
+    const onClickAdd = () => {
+        if (memberName === '') return;
+        const newMembers = [...members, memberName];
+        setMembers(newMembers);
+        setMemberName('');
+    };
 
     return (
         <>
             <div className="input-area">
                 <input placeholder="なまえ" value={memberName} onChange={onChangeMenberName}></input>
-                <button id="add-button">エントリー</button>
+                <button id="add-button" onClick={onClickAdd}>エントリー</button>
             </div>
             <div className="member-area">
                 <div className='list-row'>
