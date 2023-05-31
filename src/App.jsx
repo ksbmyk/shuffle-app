@@ -1,10 +1,7 @@
 import "./App.css";
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEdit } from "@fortawesome/free-solid-svg-icons";
-import { faTrash } from "@fortawesome/free-solid-svg-icons";
-import { faRetweet } from '@fortawesome/free-solid-svg-icons';
-import { faTimes } from '@fortawesome/free-solid-svg-icons';
+import { faEdit, faTrash, faRetweet, faTimes } from "@fortawesome/free-solid-svg-icons";
 
 const App = () => {
     const [memberName, setMemberName] = useState('');
