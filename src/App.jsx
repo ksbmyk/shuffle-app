@@ -5,6 +5,7 @@ const App = () => {
     const [memberName, setMemberName] = useState('');
     const [members, setMembers] = useState([]);
     const [shuffledMembers, setShuffledMembers] = useState([]);
+    const [isShuffled, setIsShuffled] = useState(false);
 
     const onChangeMenberName = (event) => {
         setMemberName(event.target.value);
@@ -26,6 +27,10 @@ const App = () => {
         setShuffledMembers([]);
         const resultMembers = [...members].sort(() => Math.random() - 0.5);
         setShuffledMembers(resultMembers);
+
+        if (isShuffled === false) {
+            setIsShuffled(true);
+        };
     };
 
     return (
@@ -37,7 +42,7 @@ const App = () => {
             <div className="member-area">
                 <div className='list-row'>
                     <p className='title'>参加一覧</p>
-                    <button onClick={onClickshuffle}>シャッフル</button>
+                    <button onClick={onClickshuffle}>{isShuffled ? "シャッフル" :"もう一回"}</button>
                 </div>
                 <ul>
                     {members.map((member, index) => {
