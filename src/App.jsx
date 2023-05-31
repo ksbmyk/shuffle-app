@@ -25,7 +25,7 @@ const App = () => {
             <div className="member-area">
                 <div className='list-row'>
                     <p className='title'>参加一覧</p>
-                    <button>リセット</button>
+                    <button>シャッフル</button>
                 </div>
                 <ul>
                     {members.map((member) => {
