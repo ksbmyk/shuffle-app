@@ -33,11 +33,18 @@ const App = () => {
         };
     };
 
+    const onClickReset = () => {
+        setMembers([]);
+        setShuffledMembers([]);
+        setIsShuffled(true);
+    }
+
     return (
         <>
             <div className="input-area">
                 <input placeholder="なまえ" value={memberName} onChange={onChangeMenberName}></input>
                 <button id="add-button" onClick={onClickAdd}>エントリー</button>
+                <button id="add-button" onClick={onClickReset}>リセット</button>
             </div>
             <div className="member-area">
                 <div className='list-row'>
