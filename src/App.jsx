@@ -42,7 +42,7 @@ const App = () => {
     }
 
     return (
-        <>
+        <div className="content">
             <div className="input-area">
                 <input placeholder="なまえ" value={memberName} onChange={onChangeMenberName}></input>
                 <button id="add-button" onClick={onClickAdd}><FontAwesomeIcon icon={faEdit} />エントリー</button>
@@ -83,7 +83,7 @@ const App = () => {
                     })}
                 </ul>
             </div>
-        </>
+        </div>
     );
 };
 

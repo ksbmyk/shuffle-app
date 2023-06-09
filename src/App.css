@@ -3,6 +3,12 @@ body {
   color: #444444;
 }
 
+.content {
+  margin-top: 10px;
+  width: 40%;
+  padding: 0 30%;
+}
+
 input {
   border-radius: 10px;
   border: none;
